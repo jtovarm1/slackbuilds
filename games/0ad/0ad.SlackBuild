@@ -96,6 +96,10 @@ patch -p1 < $CWD/disable-root-check.patch
 #sourced from https://code.wildfiregames.com/file/data/nryu3qhun4v6uroyiqoc/PHID-FILE-osgvknec7zmfuja5xqq4/D1852.diff
 patch -p2 < $CWD/D1852.diff
 
+# Patch for gcc >= 10.x and icu4c >= 68.x
+patch -p1 < $CWD/0ad-fcollada.patch
+patch -p0 < $CWD/icu68.patch
+
 build/workspaces/update-workspaces.sh \
   --without-pch \
   --bindir=/usr/games \
